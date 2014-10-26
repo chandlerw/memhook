@@ -1,0 +1,76 @@
+\section{mem\_\-hook.h File Reference}
+\label{mem__hook_8h}\index{mem_hook.h@{mem\_\-hook.h}}
+\begin{Desc}
+\item[Author:]{\tt chandlerw@caton.com.cn} \end{Desc}
+
+
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \textbf{MEM\_\-ALIGN}~4\label{mem__hook_8h_1b2a8c80ee4dc0996e86c7ec56d46f53}
+
+\item 
+\#define \textbf{malloc}(size)~malloc\_\-hook(size,\_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)\label{mem__hook_8h_2eb0b03d1a9de9615a291b1205969069}
+
+\item 
+\#define \textbf{strdup}(str)~strdup\_\-hook(str, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)\label{mem__hook_8h_240017da032a09ed9c32a2895b959609}
+
+\item 
+\#define \textbf{calloc}(nmemb, size)~calloc\_\-hook(nmemb, size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)\label{mem__hook_8h_e32f02efe1c5b542d360e784bf67a2fc}
+
+\item 
+\#define \textbf{free}(ptr)~free\_\-hook(ptr)\label{mem__hook_8h_9cc854374299a1dd933bf62029761768}
+
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int {\bf memory\_\-hook\_\-init} ()
+\begin{CompactList}\small\item\em Initialize memory hook liberary. \item\end{CompactList}\item 
+void $\ast$ {\bf malloc\_\-hook} (size\_\-t size, const char $\ast$file, const char $\ast$function, int line)
+\begin{CompactList}\small\item\em \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em size}]Requested size in bytes. \end{description}
+\end{Desc}
+\item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{Desc}
+\item[Author:]{\tt chandlerw@caton.com.cn} \end{Desc}
+
+
+\begin{Desc}
+\item[Date:]2011.08.21 \end{Desc}
+
+
+\subsection{Function Documentation}
+\index{mem_hook.h@{mem\_\-hook.h}!malloc_hook@{malloc\_\-hook}}
+\index{malloc_hook@{malloc\_\-hook}!mem_hook.h@{mem\_\-hook.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ malloc\_\-hook (size\_\-t {\em size}, const char $\ast$ {\em file}, const char $\ast$ {\em function}, int {\em line})}\label{mem__hook_8h_a67fc8aeb13a19eb250b3322e21ef800}
+
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em size}]Requested size in bytes. \end{description}
+\end{Desc}
+
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em file}]File name of which invokes this function. \item[{\em function}]Function name of which invokes this function. \item[{\em line}]Line number in the file that invokes this function. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Returns the memory pointer if allocation succeed, or NULL if failed. \end{Desc}
+\index{mem_hook.h@{mem\_\-hook.h}!memory_hook_init@{memory\_\-hook\_\-init}}
+\index{memory_hook_init@{memory\_\-hook\_\-init}!mem_hook.h@{mem\_\-hook.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int memory\_\-hook\_\-init ()}\label{mem__hook_8h_424e1076451529115c9e92d827a3e603}
+
+
+Initialize memory hook liberary. 
+
+\begin{Desc}
+\item[Returns:]0 if succeed, -1 if failed. \end{Desc}
